@@ -16,12 +16,16 @@ var allCharacters = lowerCase.concat(upperCase).concat(specialCharacters).concat
 
 var generateBtn = document.querySelector("#generate");
 
+// Function
 
 function generatePassword() {
 
   var lengthOfPassword = window.prompt("How many characters would you like your password to contain? (min 8, max 128)");
   if (!lengthOfPassword) {
     return;
+    lengthOfPassword(parseInt(myString)
+
+    // parseInt() ????????????
   }
 
   var lowerCaseResponse = window.confirm("Does your password require a lower-case letter?");
@@ -34,9 +38,15 @@ function generatePassword() {
 
 
   var upperCaseResponse = window.confirm("Does your password require an upper-case letter?");
+  if(upperCaseResponse) {
+
+  }
 
 
   var specialCharResponse = window.confirm("Does your password require a special character?");
+  if(lowerCaseResponse) {
+
+  }
 
 
 
