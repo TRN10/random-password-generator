@@ -9,7 +9,7 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 
 var numbersZeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-var allCharacters = lowerCase.concat(upperCase).concat(specialCharacters).concat(numbersZeroToNine);
+var combinedCharacters = [];
 
 
 // Assignment Code
@@ -20,35 +20,45 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
 
+  
+
   var lengthOfPassword = window.prompt("How many characters would you like your password to contain? (min 8, max 128)");
+  
+  
   if (!lengthOfPassword) {
     return;
-    lengthOfPassword(parseInt(myString)
-
-    // parseInt() ????????????
   }
+    
+  
+  // add lower case array to combinedCharacters array if selected by user
 
   var lowerCaseResponse = window.confirm("Does your password require a lower-case letter?");
+
   if(lowerCaseResponse) {
-    var index = Math.floor(Math.random() * lowerCase.length);
-    var lowerCaseRandom = lowerCase[index];
-  
+  combinedCharacters = combinedCharacters.concat(lowerCase);
   }
 
 
 
   var upperCaseResponse = window.confirm("Does your password require an upper-case letter?");
-  if(upperCaseResponse) {
 
+  if(upperCaseResponse) {
+  combinedCharacters = combinedCharacters.concat(upperCase);
   }
 
 
   var specialCharResponse = window.confirm("Does your password require a special character?");
-  if(lowerCaseResponse) {
-
+  if(specialCharResponse) {
+    combinedCharacters = combinedCharacters.concat(specialCharacters);
   }
 
+  var numberResponse = window.confirm("Does your password require a number?");
+  //}
 
+  // randomly select from combinedChar n times where n = lengthOfPassword
+
+  // var index = Math.floor(Math.random() * lowerCase.length);
+  // var lowerCaseRandom = lowerCase[index];
 
 }
 
