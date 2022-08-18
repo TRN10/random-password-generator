@@ -22,17 +22,26 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
 
-  
-
   var lengthOfPassword = window.prompt("How many characters would you like your password to contain? (minimum 8, maximum 128)");
   
   if (!lengthOfPassword) {
     return;
   }
-  
+
+  if (lengthOfPassword <= 7) {
+    window.alert("password must be at least 8 characters")
+    return;
+  }
+
+  if (lengthOfPassword >= 129) {
+    window.alert("password must be no more than 128 characters")
+    return;
+  }
+
   // Change string input to number
 
   lengthOfPassword = parseInt(lengthOfPassword);
+
   
   // add lower case array to combinedCharacters array if selected by user
 
@@ -60,19 +69,14 @@ function generatePassword() {
   }
 
   // add numbersZeroToNine array to combinedCharacters array if selected by user
+
   var numberResponse = window.confirm("Does your password require a number?");
 
   if(numberResponse) {
     combinedCharacters = combinedCharacters.concat(numbersZeroToNine);
   }
 
-
-  
-
-  // randomly select from combinedChar n times where n = lengthOfPassword
-
-  
-
+  // randomly select from combinedCharacters times by the password lenght specified by user input
 
  for (let i = 0; i < lengthOfPassword; i++) {
  
@@ -82,6 +86,7 @@ function generatePassword() {
 }
  
 return finalPassword.join("");
+
 }
 
 
