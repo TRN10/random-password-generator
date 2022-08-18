@@ -11,6 +11,8 @@ var numbersZeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var combinedCharacters = [];
 
+var finalPassword = []
+
 
 // Assignment Code
 
@@ -69,11 +71,18 @@ function generatePassword() {
 
   // randomly select from combinedChar n times where n = lengthOfPassword
 
+  
+
+
+ for (let i = 0; i < lengthOfPassword; i++) {
+ 
   var index = Math.floor(Math.random() * combinedCharacters.length);
   var combinedCharactersRandom = combinedCharacters[index];
-
+  finalPassword.push(combinedCharactersRandom)
 }
-
+ 
+return finalPassword.join("");
+}
 
 
 
