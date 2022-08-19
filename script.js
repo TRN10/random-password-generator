@@ -24,12 +24,10 @@ function generatePassword() {
 
   var lengthOfPassword = parseInt(window.prompt("How many characters would you like your password to contain? (minimum 8, maximum 128)"));
   
-  if (!lengthOfPassword) {
-    return;
-  }
 
   if (Number.isNaN(lengthOfPassword)) {
     window.alert("Please enter a number")
+    return null;
   }
 
   if (lengthOfPassword <= 7) {
@@ -42,10 +40,6 @@ function generatePassword() {
     return;
   }
 
-
-  // Change string input to number
-
-  //lengthOfPassword = parseInt(lengthOfPassword);
  
   
   // add lower case array to combinedCharacters array if selected by user
