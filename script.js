@@ -29,14 +29,18 @@ function generatePassword() {
   }
 
   if (lengthOfPassword <= 7) {
-    window.alert("password must be at least 8 characters")
+    window.alert("Password must be at least 8 characters")
     return;
   }
 
   if (lengthOfPassword >= 129) {
-    window.alert("password must be no more than 128 characters")
+    window.alert("Password must be no more than 128 characters")
     return;
   }
+
+  //if (lengthOfPassword.isNaN(lengthOfPassword)) {
+    //window.alert("Please enter a number")
+  //}
 
   // Change string input to number
 
@@ -76,7 +80,7 @@ function generatePassword() {
     combinedCharacters = combinedCharacters.concat(numbersZeroToNine);
   }
 
-  // randomly select from combinedCharacters times by the password lenght specified by user input
+  // randomly select from combinedCharacters times by the password length specified by user input
 
  for (let i = 0; i < lengthOfPassword; i++) {
  
@@ -94,6 +98,7 @@ return finalPassword.join("");
 // Write password to the #password input
 
 function writePassword() {
+  finalPassword = []
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
