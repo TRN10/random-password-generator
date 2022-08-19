@@ -14,3 +14,4 @@ Array concatenation, if statements, for loops and event listeners were used in t
 ![random-password-generator-screenshot](assets/images/random-password-generator-screenshot.png)
 ```
 
+https://trn10.github.io/random-password-generator/
