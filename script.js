@@ -22,10 +22,14 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
 
-  var lengthOfPassword = window.prompt("How many characters would you like your password to contain? (minimum 8, maximum 128)");
+  var lengthOfPassword = parseInt(window.prompt("How many characters would you like your password to contain? (minimum 8, maximum 128)"));
   
   if (!lengthOfPassword) {
     return;
+  }
+
+  if (Number.isNaN(lengthOfPassword)) {
+    window.alert("Please enter a number")
   }
 
   if (lengthOfPassword <= 7) {
@@ -38,14 +42,11 @@ function generatePassword() {
     return;
   }
 
-  //if (lengthOfPassword.isNaN(lengthOfPassword)) {
-    //window.alert("Please enter a number")
-  //}
 
   // Change string input to number
 
-  lengthOfPassword = parseInt(lengthOfPassword);
-
+  //lengthOfPassword = parseInt(lengthOfPassword);
+ 
   
   // add lower case array to combinedCharacters array if selected by user
 
